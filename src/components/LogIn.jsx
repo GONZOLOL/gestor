@@ -4,41 +4,26 @@ import {ReactComponent as Lock} from "../media/lock.svg";
 import {ReactComponent as Asterisk} from "../media/asterisk.svg";
 import { Link } from 'react-router-dom';
 
-
-export function SignUp() {
+export function LogIn() {
 
     return(
         <>
-           <section className="loginContainer">
+            <section className="loginContainer">
                 <div className="mainBox">
                     <div className='card'>
                         <div className="switchContainer">
-                            <Link to='../login' className="secondSelector">
-                                <span >Log In</span>
+                            <span className="currentSelector">Log In</span>
+                            <Link to='../signup' className="secondSelector">
+                                <span>Sign Up</span>
                             </Link>
-                            <span className="currentSelector">Sign Up</span>
                         </div>
                         <div className="tittle">
-                            <span>Sign Up</span>
+                            <span>Log In</span>
                         </div>
                         <form className='form'>
                             <div className='inputContainer'>
-                                <div className='nameContainer'>
-                                    <input
-                                        type="text"
-                                        placeholder='Name'
-                                        className='name'
-                                    />
-                                    <Asterisk className='svg asteriskIcon'/>
-                                    <input
-                                        type="text"
-                                        placeholder='Surname'
-                                        className='surName'
-                                    />
-                                </div>
                                 <div className='emailContainer'>
-                                    <input 
-                                        type="email"
+                                    <   input type="email"
                                         className='email'
                                         placeholder="Email"
                                     />
@@ -46,16 +31,14 @@ export function SignUp() {
                                     <Asterisk className='svg asteriskIcon'/>
                                 </div>
                                 <div className='passWordContainer'>
-                                    <input
-                                        type="password"
+                                    <   input type="password"
                                         className='password'
                                         placeholder="Password"
                                     />
                                     <Lock className='svg lockIcon'/>
                                     <Asterisk className='svg asteriskIcon'/>
                                 </div>
-                                <input
-                                    type="submit"
+                                <   input type="submit"
                                     className="submitButton"
                                     value={"Log In"}
                                 />

@@ -1,0 +1,134 @@
+.loginContainer{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #DB7600;
+    padding: 40px 0px 100px;
+    .mainBox{
+        max-width: 270px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #24343D;
+        border-radius: 2%;
+        .card{
+            width: 250px;
+            .switchContainer{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                .currentSelector{
+                    background-color: #DB7600;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 8px 0px;
+                    width: 50%;
+                    text-align: center;
+                }
+                .secondSelector{
+                    background-color: #42555B;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 5px;
+                    width: 50%;
+                    padding: 8px 0px;
+                    text-decoration: none;
+                    text-align: center;
+                }
+            }
+            .tittle{
+                font-size: 30px;
+                text-align: center;
+                margin: 20px 0px 40px 0px;
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                input{
+                    background-color: #24343D;
+                    border: none;
+                    border-bottom: 1px solid #ffffff;
+                    color: #ffffff;
+                    position: relative;
+                    padding: 0px 0px 5px 35px;
+                    margin: 10px 0px;
+                    font-size: 16px;
+                    &:active{
+                        outline: none;
+                    }
+                    &:focus-visible{
+                        outline: none;
+                        border-bottom: 1px solid #DB7600;
+                    }
+                }
+                svg{
+                    scale: 0.2;
+                    width: 90px;
+                    height: 90px;
+                    fill: #DB7600;
+                }
+                .inputContainer{
+                    display: flex;
+                    flex-direction: column;
+                    .nameContainer{
+                        display: flex;
+                        gap: 10px;
+                        padding: 0px;
+                        position: relative;
+                        .name{
+                            width: 50%;
+                            padding-left: 5px;
+                        }
+                        .surName{
+                            padding-left: 5px;
+                            width: 50%;
+                        }
+                    }
+                    .emailContainer{
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                    }
+                    .passWordContainer{
+                        display: flex;
+                        flex-direction: column;
+                        position: relative;
+                    }
+                    .emailIcon{
+                        position: absolute;
+                        top: -26px;
+                        left: -30px;
+                    }
+                    .lockIcon{
+                        position: absolute;
+                        top: -27px;
+                        left: -30px;
+                    }
+                    .asteriskIcon{
+                        scale: 0.1;
+                        position: absolute;
+                        top: -28px;
+                        left: 190px;
+                    }
+                    .submitButton{
+                        background-color: #DB7600;
+                        border: none;
+                        border-radius: 5px;
+                        margin: 50px 0px 20px 0px;
+                        padding: 5px 0px;
+                        font-size: 25px;
+                        font-weight: 600;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
+
