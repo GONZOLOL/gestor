@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 export function UsersPage() {
 
-    const [data, setData] = useState(null);
+    const [usersData, setUsersData] = useState(null);
     
     fetch('http://51.38.51.187:5050/api/v1/users', 
         {headers: {Authentication: 'Bearer {token}'}
     })
-        .then( (data) => data.json() )
-        .then(data => {
-            setData(data)
+        .then( (usersData) => usersData.json() )
+        .then(usersData => {
+            setUsersData(usersData)
         })
 
 
@@ -29,7 +29,7 @@ export function UsersPage() {
                             </Link>
                         </div>
                         {
-                            data.map((datos, i) => {
+                            usersData.map((datos, i) => {
                                 return (
                                     <section key={i}>
                                         {datos}
