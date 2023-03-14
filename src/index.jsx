@@ -5,10 +5,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './styles/index.scss';
-import './styles/logIn.scss';
-import './styles/signUp.scss';
+import './styles/card.scss';
+import './styles/submit.scss';
+import './styles/usersPage.scss'
 import {SignUp} from './components/SignUp';
 import {LogIn} from './components/LogIn';
+import {UsersPage} from './components/UsersPage';
 import App from './components/App';
 
 const router = createBrowserRouter([
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp/>
+  },
+  {
+    path: "/users-page",
+    element: <UsersPage/>
   },
 ]);
 
