@@ -1,7 +1,6 @@
 .loginContainer{
     width: 100%;
     margin: 0 auto;
-    background-color: #DB7600;
     padding: 40px 0px 100px;
     .mainBox{
         max-width: 270px;
@@ -44,7 +43,7 @@
                 text-align: center;
                 margin: 20px 0px 40px 0px;
             }
-            .form{
+            form{
                 display: flex;
                 flex-direction: column;
                 input{
@@ -113,15 +112,26 @@
                         top: -28px;
                         left: 190px;
                     }
+                    .showPassword{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        flex-direction: row-reverse;
+                    }
+                    .submitLink{
+                        text-decoration: none;
+                    }
                     .submitButton{
-                        background-color: #DB7600;
+                        display: flex;
+                        justify-content: center;
+                        margin: 0 auto;
                         border: none;
                         border-radius: 5px;
-                        margin: 50px 0px 20px 0px;
                         padding: 5px 0px;
                         font-size: 25px;
                         font-weight: 600;
                         cursor: pointer;
+                        color: #DB7600;
                     }
                 }
 

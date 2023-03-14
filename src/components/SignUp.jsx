@@ -14,14 +14,14 @@ export function SignUp() {
                     <div className='card'>
                         <div className="switchContainer">
                             <Link to='../login' className="secondSelector">
-                                <span >Log In</span>
+                                <span>Log In</span>
                             </Link>
                             <span className="currentSelector">Sign Up</span>
                         </div>
                         <div className="tittle">
                             <span>Sign Up</span>
                         </div>
-                        <form className='form'>
+                        <form>
                             <div className='inputContainer'>
                                 <div className='nameContainer'>
                                     <input
@@ -54,11 +54,20 @@ export function SignUp() {
                                     <Lock className='svg lockIcon'/>
                                     <Asterisk className='svg asteriskIcon'/>
                                 </div>
-                                <input
-                                    type="submit"
-                                    className="submitButton"
-                                    value={"Log In"}
-                                />
+                                
+                                <div className='submit'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    <input
+                                        type="submit"
+                                        className="submitButton"
+                                        value={"Sign Up"}
+                                    />
+                                </div>
+                                    
                             </div>
                         </form>
                     </div>

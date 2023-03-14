@@ -6,6 +6,15 @@ import { Link } from 'react-router-dom';
 
 export function LogIn() {
 
+    const hidePassword = () => {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+    }
+
     return(
         <>
             <section className="loginContainer">
@@ -23,7 +32,8 @@ export function LogIn() {
                         <form className='form'>
                             <div className='inputContainer'>
                                 <div className='emailContainer'>
-                                    <   input type="email"
+                                    <input
+                                        type="email"
                                         className='email'
                                         placeholder="Email"
                                     />
@@ -31,17 +41,34 @@ export function LogIn() {
                                     <Asterisk className='svg asteriskIcon'/>
                                 </div>
                                 <div className='passWordContainer'>
-                                    <   input type="password"
+                                    <input 
+                                        type="password"
                                         className='password'
                                         placeholder="Password"
+                                        id="myInput"
                                     />
                                     <Lock className='svg lockIcon'/>
                                     <Asterisk className='svg asteriskIcon'/>
                                 </div>
-                                <   input type="submit"
-                                    className="submitButton"
-                                    value={"Log In"}
-                                />
+                                <div className='showPassword'>
+                                    <input type={'checkbox'} onClick={hidePassword}/>
+                                    Show Password
+                                </div>
+
+                                <div className='submit'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                    <Link to='../users-page' className='submitLink'>
+                                        <input
+                                            type="submit"
+                                            className="submitButton"
+                                            value={"Log In"}
+                                        />
+                                    </Link>
+                                </div>
                             </div>
                         </form>
                     </div>
