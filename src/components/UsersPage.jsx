@@ -1,20 +1,20 @@
-import React from 'react';
-import { useState} from "react";
-import {ReactComponent as Exit} from "../media/exit.svg";
+import { useState } from "react";
+import { ReactComponent as Exit } from "../media/exit.svg";
 import { Link } from 'react-router-dom';
-
+import { getLocalStorage } from "./LocalStorage";
 
 export function UsersPage() {
 
-    const [usersData, setUsersData] = useState(null);
-    
+    const token = getLocalStorage()
+    console.log(token)
+
+    const [data, setData] = useState(null);
+
     fetch('http://51.38.51.187:5050/api/v1/users', 
-        {headers: {Authentication: 'Bearer {token}'}
+        {headers: {Authentication: 'Bearer' + token}
     })
-        .then( (usersData) => usersData.json() )
-        .then(usersData => {
-            setUsersData(usersData)
-        })
+        .then( (data) => data.json() )
+        .then( data  => { setData(data) } )
 
 
     return(
@@ -28,13 +28,14 @@ export function UsersPage() {
                                 <Exit/>
                             </Link>
                         </div>
-                        {
-                            usersData.map((datos, i) => {
-                                return (
-                                    <section key={i}>
-                                        {datos}
-                                    </section>
-                                )})
+                        {data ? (
+                                data.map((data, i) => {
+                                    return (
+                                        <div key={i}>
+                                            {data.email}
+                                        </div>
+                                    )})
+                            ) : ""
                         }
 
                         

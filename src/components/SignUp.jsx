@@ -23,7 +23,7 @@ export function SignUp() {
 
         
         fetch('http://51.38.51.187:5050/api/v1/auth/sign-up', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 "name": {name},
                 "surname": {surname},
