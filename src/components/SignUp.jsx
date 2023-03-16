@@ -12,6 +12,10 @@ export function SignUp() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const reset = () => {
+    setError(null);
+  };
+
   function submit(event) {
     event.preventDefault();
     setName(event.target.name.value);
@@ -25,7 +29,7 @@ export function SignUp() {
         name: name,
         surname: surname,
         email: email,
-        password: passsword,
+        password: password,
       },
     })
       .then((response) => {
@@ -46,79 +50,76 @@ export function SignUp() {
   }
 
   return (
-    <>
-      <section className="loginContainer">
-        <div className="mainBox">
-          <div className="card">
-            <div className="switchContainer">
-              <Link to="../login" className="secondSelector">
-                <span>Log In</span>
-              </Link>
-              <span className="currentSelector">Sign Up</span>
-            </div>
-            <div className="tittle">
-              <span>Sign Up</span>
-            </div>
-            <form onSubmit={submit}>
-              <div className="inputContainer">
-                <div className="nameContainer">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="name"
-                    id="name"
-                    required
-                  />
-                  <Asterisk className="svg asteriskIcon" />
-                  <input
-                    type="text"
-                    placeholder="Surname"
-                    className="surName"
-                    id="surname"
-                    required
-                  />
-                </div>
-                <div className="emailContainer">
-                  <input
-                    type="email"
-                    className={!error ? "" : "emailError"}
-                    placeholder="Email"
-                    id="email"
-                    required
-                  />
-                  <Mail className="svg emailIcon" />
-                  <Asterisk className="svg asteriskIcon" />
-                </div>
-                <div className="passWordContainer">
-                  <input
-                    type="password"
-                    className="password"
-                    placeholder="Password"
-                    id="password"
-                    required
-                  />
-                  <Lock className="svg lockIcon" />
-                  <Asterisk className="svg asteriskIcon" />
-                </div>
-
-                <div className="submit">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                  <input
-                    type="submit"
-                    className="submitButton"
-                    value={"Sign Up"}
-                  />
-                </div>
-              </div>
-            </form>
-            {error ? <div className="downInputError">{error}</div> : ""}
+    <section className="loginContainer">
+      <div className="mainBox">
+        <div className="card">
+          <div className="switchContainer">
+            <Link to="../login" className="secondSelector">
+              <span>Log In</span>
+            </Link>
+            <span className="currentSelector">Sign Up</span>
           </div>
+          <div className="tittle">
+            <span>Sign Up</span>
+          </div>
+          <form onSubmit={submit}>
+            <div className="inputContainer">
+              <div className="nameContainer">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="name"
+                  id="name"
+                  required
+                />
+                <Asterisk className="svg asteriskIcon" />
+                <input
+                  type="text"
+                  placeholder="Surname"
+                  className="surName"
+                  id="surname"
+                  required
+                />
+              </div>
+              <div className="emailContainer">
+                <input
+                  type="email"
+                  className={!error ? "" : "emailError"}
+                  placeholder="Email"
+                  id="email"
+                  required
+                  onClick={reset}
+                />
+                <Mail className="svg emailIcon" />
+                <Asterisk className="svg asteriskIcon" />
+              </div>
+              <div className="passWordContainer">
+                <input
+                  type="password"
+                  className="password"
+                  placeholder="Password"
+                  id="password"
+                  required
+                />
+                <Lock className="svg lockIcon" />
+                <Asterisk className="svg asteriskIcon" />
+              </div>
+              <div className="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <input
+                  type="submit"
+                  className="submitButton"
+                  value={"Sign Up"}
+                />
+              </div>
+            </div>
+          </form>
+          {error ? <div className="errorMessage">{error}</div> : ""}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

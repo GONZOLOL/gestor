@@ -15,6 +15,10 @@ export const LogIn = () => {
 
   const navigate = useNavigate();
 
+  const reset = () => {
+    setError(null)
+  };
+
   function submit(event) {
     event.preventDefault();
 
@@ -33,9 +37,9 @@ export const LogIn = () => {
       })
         .then((response) => {
           console.log(response);
-          if (response.status === "404") {
+          if (response.status === 404) {
             throw new Error("404");
-          } else if (response.status === "601") {
+          } else if (response.status === 601) {
             throw new Error("601");
           }
           return response;
@@ -46,7 +50,7 @@ export const LogIn = () => {
         })
         .catch((error) => {
           if (error.message === "404") {
-            setError("User email not found or password invalid");
+            setError("Invalid email or password");
           } else if (error.message === "601") {
             setError("User is not validated");
           } else {
@@ -61,7 +65,7 @@ export const LogIn = () => {
   useEffect(() => {
     if (data?.accessToken) {
       updateLocalStorageToken(data.accessToken);
-      navigate("/users-page");
+      navigate("/users");
     }
   }, [data]);
 
@@ -98,6 +102,7 @@ export const LogIn = () => {
                     className={!error ? "email" : "emailError"}
                     placeholder="Email"
                     id="email"
+                    onClick={reset}
                   />
                   <Mail className="svg emailIcon" />
                   <Asterisk className="svg asteriskIcon" />
@@ -108,6 +113,7 @@ export const LogIn = () => {
                     className={!error ? "password" : "passwordError"}
                     placeholder="Password"
                     id="password"
+                    onClick={reset}
                   />
                   <Lock className="svg lockIcon" />
                   <Asterisk className="svg asteriskIcon" />
@@ -141,7 +147,7 @@ export const LogIn = () => {
                     id="submit"
                   />
                 </div>
-                <div>{error}</div>
+                {error && <div className="errorMessage">{error}</div>}
               </div>
             </form>
           </div>
