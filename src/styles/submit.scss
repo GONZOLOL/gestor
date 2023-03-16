@@ -3,9 +3,8 @@ form .submit {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    
+    z-index: 99;
     width: 200px;
-    padding: 5px 0px;
     color: #b79726;
     font-size: 16px;
     text-decoration: none;

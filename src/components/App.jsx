@@ -1,13 +1,11 @@
-import {LogIn} from "./LogIn";
-import {SignUp} from "./SignUp";
-import {UsersPage} from "./UsersPage";
+import { LogIn } from "./LogIn";
+import { SignUp } from "./SignUp";
 
 export default function App() {
-    return (
-        <>
-            <LogIn/>
-            <SignUp/>
-            <UsersPage/>
-        </>
-    )
+  return (
+    <>
+      <LogIn />
+      <SignUp />
+    </>
+  );
 }

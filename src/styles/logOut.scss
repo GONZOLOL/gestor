@@ -1,0 +1,44 @@
+.logOut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0px 0px 30px 0px;
+}
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .mainButton span {
+    background-color: #db7600;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-align: center;
+    &:hover {
+      opacity: 20%;
+      color: #ffffff;
+      transition: 500ms;
+    }
+  }
+  .secondaryButton span {
+    background-color: #42555b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: 500ms;
+    &:hover {
+      background-color: red;
+      color: #ffffff;
+      transition: 500ms;
+    }
+  }
+}
