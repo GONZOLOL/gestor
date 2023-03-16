@@ -6,10 +6,12 @@ import "./styles/card.scss";
 import "./styles/submit.scss";
 import "./styles/users.scss";
 import "./styles/logOut.scss";
+import "./styles/viewUser.scss";
 import { SignUp } from "./components/SignUp";
 import { LogIn } from "./components/LogIn";
 import { Users } from "./components/Users";
 import { LogOut } from "./components/LogOut";
+import { ViewUser } from "./components/ViewUser";
 import App from "./components/App";
 
 const router = createBrowserRouter([
@@ -30,7 +32,11 @@ const router = createBrowserRouter([
     element: <Users />,
   },
   {
-    path: "/logOut",
+    path: "/users/viewUser",
+    element: <ViewUser />,
+  },
+  {
+    path: "/users/logOut",
     element: <LogOut />,
   },
 ]);
