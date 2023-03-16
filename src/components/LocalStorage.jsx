@@ -7,3 +7,11 @@ export function getLocalStorageToken() {
 export function updateLocalStorageToken(token) {
   localStorage.setItem("token", token);
 }
+
+export function getLocalStorageId() {
+  return localStorage.getItem("id");
+}
+
+export function updateLocalStorageId(id) {
+  localStorage.setItem("id", id);
+}

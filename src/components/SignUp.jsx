@@ -25,12 +25,7 @@ export function SignUp() {
 
     fetch("http://51.38.51.187:5050/api/v1/auth/sign-up", {
       method: "POST",
-      headers: {
-        name: name,
-        surname: surname,
-        email: email,
-        password: password,
-      },
+      headers: { name, surname, email, password },
     })
       .then((response) => {
         if (!response.ok) {
@@ -42,7 +37,6 @@ export function SignUp() {
       .catch((error) => {
         if (error.message === "Network response was not ok") {
           setError("Email already exist");
-          setData(null);
         } else {
           console.error("Error:", error);
         }

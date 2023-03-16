@@ -16,7 +16,7 @@ export const LogIn = () => {
   const navigate = useNavigate();
 
   const reset = () => {
-    setError(null)
+    setError(null);
   };
 
   function submit(event) {
@@ -36,7 +36,6 @@ export const LogIn = () => {
         body: JSON.stringify({ email, password }),
       })
         .then((response) => {
-          console.log(response);
           if (response.status === 404) {
             throw new Error("404");
           } else if (response.status === 601) {
@@ -156,4 +155,3 @@ export const LogIn = () => {
     </>
   );
 };
-export const Token = React.createContext(LogIn.data);
