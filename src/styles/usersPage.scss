@@ -1,32 +1,64 @@
-.userPageContainer{
-    width: 100%;
+.userPageContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0px 100px;
+  .mainBox {
+    max-width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    padding: 40px 0px 100px;
-    .mainBox{
-        max-width: 270px;
+    padding: 20px;
+    background-color: #24343d;
+    border-radius: 5px;
+    .card {
+      width: 250px;
+      .header {
+        position: relative;
+        svg {
+          position: absolute;
+          width: 30px;
+          top: -5px;
+          left: 220px;
+          fill: #db7600;
+        }
+      }
+      .userList {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #24343D;
-        border-radius: 2%;
-        .card{
-            width: 250px;
-            .header{
-                position: relative;
-                    svg{
-                        position: absolute;
-                        width: 30px;
-                        top: -5px;
-                        left: 220px;
-                        fill: #DB7600;
-                    }
+        gap: 10px;
+        margin-top: 20px;
+        .userContainer {
+          display: flex;
+          justify-content: space-around;
+          .user {
+            display: flex;
+            gap: 10px;
+            background-color: #db7600;
+            border-radius: 5px;
+            padding: 8px;
+            width: 170px;
+            justify-content: center;
+            a {
+              text-decoration: none;
+              color: #ffffff;
+              font-size: 12px;
             }
+          }
+          .svg {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
         }
+      }
     }
+  }
 }
-
-
-
