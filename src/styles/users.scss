@@ -12,83 +12,96 @@
     padding: 20px;
     background-color: #24343d;
     border-radius: 5px;
+
     .card {
       width: 250px;
-      .header {
-        position: relative;
-        display: flex;
-        gap: 10px;
-        svg {
-          position: absolute;
-          width: 30px;
-          top: -5px;
-          left: 220px;
-          fill: #db7600;
+    }
+    .header {
+      position: relative;
+      display: flex;
+      gap: 10px;
+
+      svg {
+        position: absolute;
+        width: 30px;
+        top: -5px;
+        left: 220px;
+        fill: #db7600;
+        transition: 500ms;
+        &:hover {
+          opacity: 20%;
           transition: 500ms;
-          &:hover {
-            opacity: 20%;
-            transition: 500ms;
+        }
+      }
+    }
+    .userList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+      .user {
+        display: flex;
+        flex-direction: column;
+        .iconButtons {
+          display: flex;
+          svg {
+            width: 20px;
+            height: 20px;
           }
         }
       }
-      .userList {
+      .userContainer {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 20px;
-        .userContainer {
-          display: flex;
-          justify-content: space-around;
-          .user {
-            a {
-              text-decoration: none;
-            }
-            span {
-              display: flex;
-              gap: 10px;
-              background-color: #db7600;
-              border-radius: 5px;
-              padding: 8px;
-              width: 170px;
-              justify-content: center;
-              text-decoration: none;
-              color: #ffffff;
-              font-size: 12px;
-              color: #ffffff;
+        justify-content: space-around;
+        .user {
+          a {
+            text-decoration: none;
+          }
+          span {
+            display: flex;
+            gap: 10px;
+            background-color: #db7600;
+            border-radius: 5px;
+            padding: 8px;
+            width: 170px;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 12px;
+            color: #ffffff;
+            transition: 500ms;
+            &:hover {
+              opacity: 20%;
               transition: 500ms;
-              &:hover {
-                opacity: 20%;
-                transition: 500ms;
-              }
             }
           }
-          .icons {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-left: 20px;
-            transition: 500ms;
-            cursor: pointer;
-            svg {
-              width: 20px;
-              height: 20px;
-              fill: #db7600;
-            }
-            .edit svg {
+        }
+        .icons {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          margin-left: 20px;
+          transition: 500ms;
+          cursor: pointer;
+          svg {
+            width: 20px;
+            height: 20px;
+            fill: #db7600;
+          }
+          .edit svg {
+            transition: 400ms;
+            &:hover {
               transition: 400ms;
-              &:hover {
-                transition: 400ms;
-                fill: green;
-              }
+              fill: green;
             }
-            .delete svg {
+          }
+          .delete svg {
+            transition: 400ms;
+            &:hover {
               transition: 400ms;
-              &:hover {
-                transition: 400ms;
-                fill: red;
-              }
+              fill: red;
             }
           }
         }

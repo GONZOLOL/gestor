@@ -1,0 +1,127 @@
+.mainBox {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0px 100px;
+  .innerBox {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #24343d;
+    border-radius: 5px;
+
+    .viewUserContainer {
+      .top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 50px;
+        .tittle{
+            font-size: 30px;
+        }
+        .back {
+          svg {
+            width: 50px;
+            height: 50px;
+            fill: #db7600;
+            transition: 500ms;
+            &:hover {
+              opacity: 20%;
+              transition: 500ms;
+            }
+          }
+        }
+      }
+      .userContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 10px;
+          margin: 20px;
+          .contentContainer {
+            display: flex;
+            position: relative;
+            align-items: center;
+            .info {
+              display: flex;
+              align-items: center;
+              position: absolute;
+              left: 80px;
+              gap: 60px;
+              border-bottom: 1px solid #ffffff;
+              width: 75%;
+              font-size: 12px;
+            }
+            .tag {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+        .iconButtons {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+          svg {
+            width: 60px;
+            height: 60px;
+          }
+          .editButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #db7600;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 20px;
+            text-align: center;
+            gap: 10px;
+            svg {
+              width: 30px;
+              height: 30px;
+            }
+            &:hover {
+              opacity: 20%;
+              color: #ffffff;
+              transition: 500ms;
+            }
+          }
+          .deleteButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #42555b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: 500ms;
+            gap: 10px;
+            svg {
+              width: 30px;
+              height: 30px;
+            }
+            &:hover {
+              background-color: red;
+              color: #ffffff;
+              transition: 500ms;
+            }
+          }
+        }
+      }
+    }
+  }
+}
