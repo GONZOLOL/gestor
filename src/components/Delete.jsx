@@ -1,11 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { getLocalStorageId } from "../utils/LocalStorage";
 import { getLocalStorageToken } from "../utils/LocalStorage";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export function Delete() {
   const [error, setError] = useState("");
-  const [deleted, setDeleted] = useState(null);
 
   const id = getLocalStorageId();
   const navigate = useNavigate();
@@ -17,10 +16,10 @@ export function Delete() {
     })
       .then((response) => {
         if (response.status === 204) {
-          setDeleted("User deleted successfully");
+          setError("User deleted successfully");
           setTimeout(() => {
             navigate("/users");
-          }, 3000);
+          }, 1500);
         } else if (response.status === 404) {
           throw new Error("404");
         }
@@ -33,7 +32,6 @@ export function Delete() {
           console.error("Error:", error);
         }
       });
-    console.log("getLocalStorageId", getLocalStorageId());
   };
 
   return (
@@ -42,7 +40,7 @@ export function Delete() {
         <div className="card">
           <div>
             <span className="delete">
-              Are you sure that you <br /> want to delete user{" "}
+              Are you sure that you <br /> want to delete this user{" "}
               {getLocalStorageId}?
             </span>
             <div className="selection">

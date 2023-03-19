@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getLocalStorageToken } from "../utils/LocalStorage";
 import { updateLocalStorageId } from "../utils/LocalStorage";
 import { ReactComponent as Trash } from "../media/trash.svg";
+import { ReactComponent as User } from "../media/user.svg";
 import { ReactComponent as EditUser } from "../media/editUser.svg";
 
 export function Users() {
@@ -32,8 +33,11 @@ export function Users() {
         <div className="card">
           <div className="header">
             <span>Registered Users</span>
-            <span>{data?.count}</span>
-            <Link to="/users/logOut" className="exitSvg">
+            <div className="userCounter">
+              <span>{data?.count}</span>
+              <User className="person" />
+            </div>
+            <Link to="/users/logOut" className="exit">
               <Exit />
             </Link>
           </div>
@@ -53,15 +57,15 @@ export function Users() {
                       </div>
                       <div className="icons">
                         <Link
-                          to=""
-                          className="edit"
+                          to="/users/editUser"
+                          className="editIcon"
                           onClick={() => saveId(data.id)}
                         >
                           {<EditUser />}
                         </Link>
                         <Link
                           to="/users/delete"
-                          className="delete"
+                          className="deleteIcon"
                           onClick={() => saveId(data.id)}
                         >
                           {<Trash />}

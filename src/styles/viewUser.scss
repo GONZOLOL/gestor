@@ -18,8 +18,8 @@
         flex-direction: row;
         align-items: center;
         gap: 50px;
-        .tittle{
-            font-size: 30px;
+        .tittle {
+          font-size: 30px;
         }
         .back {
           svg {
@@ -67,6 +67,7 @@
         .iconButtons {
           display: flex;
           justify-content: center;
+          align-items: center;
           margin-top: 10px;
           a {
             text-decoration: none;
@@ -78,18 +79,24 @@
           }
           .editButton {
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: flex-start;
             background-color: #db7600;
             color: #ffffff;
             border: none;
             border-radius: 5px;
-            padding: 8px 20px;
-            text-align: center;
-            gap: 10px;
+            transition: 500ms;
+            position: relative;
+            .editLink {
+              padding: 10px 40px 10px 15px;
+              z-index: 2;
+            }
             svg {
               width: 30px;
               height: 30px;
+              position: absolute;
+              left: 80px;
+              fill: #ffffff;
             }
             &:hover {
               opacity: 20%;
@@ -97,27 +104,32 @@
               transition: 500ms;
             }
           }
+          // #42555b
           .deleteButton {
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: flex-start;
             background-color: #42555b;
             color: #ffffff;
             border: none;
             border-radius: 5px;
-            padding: 8px 20px;
-            text-decoration: none;
-            text-align: center;
             transition: 500ms;
-            gap: 10px;
+            position: relative;
+            .deleteLink {
+              padding: 10px 50px 10px 20px;
+              z-index: 2;
+            }
             svg {
               width: 30px;
               height: 30px;
+              position: absolute;
+              left: 70px;
+              fill: #ffffff;
             }
             &:hover {
-              background-color: red;
               color: #ffffff;
               transition: 500ms;
+              background-color: red;
             }
           }
         }
