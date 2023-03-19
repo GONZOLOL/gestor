@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { getLocalStorageToken } from "../utils/LocalStorage";
 import { getLocalStorageId } from "../utils/LocalStorage";
 import { ReactComponent as Trash } from "../media/trash.svg";
-import { ReactComponent as EditUser } from "../media/editUser.svg";
+import { ReactComponent as Edit } from "../media/editUser.svg";
 
-export function ViewUser() {
+export function EditUser() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ export function ViewUser() {
                 <Link to="" className="edit">
                   <span>Edit User</span>
                 </Link>
-                <EditUser />
+                <Edit />
               </div>
               <div className="deleteButton">
                 <Link to="" className="delete">

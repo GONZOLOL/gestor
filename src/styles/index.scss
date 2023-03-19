@@ -1,12 +1,19 @@
-html{
-    background: linear-gradient(#DB7600, #42555B,);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+@import "../styles/card.scss";
+@import "../styles/submit.scss";
+@import "../styles/users.scss";
+@import "../styles/logOut.scss";
+@import "../styles/viewUser.scss";
+@import "../styles/delete.scss";
+
+html {
+  background: linear-gradient(#db7600, #42555b);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-body{
-    color: #ffffff;
-    font-family: 'Tilt Neon', cursive;
-    font-weight: 600;
-    margin: 0;
-    padding: 0;
+body {
+  color: #ffffff;
+  font-family: "Tilt Neon", cursive;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
 }

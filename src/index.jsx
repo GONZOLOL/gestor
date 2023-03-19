@@ -2,16 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./styles/index.scss";
-import "./styles/card.scss";
-import "./styles/submit.scss";
-import "./styles/users.scss";
-import "./styles/logOut.scss";
-import "./styles/viewUser.scss";
 import { SignUp } from "./components/SignUp";
 import { LogIn } from "./components/LogIn";
 import { Users } from "./components/Users";
 import { LogOut } from "./components/LogOut";
 import { ViewUser } from "./components/ViewUser";
+import { EditUser } from "./components/EditUser";
+import { Delete } from "./components/Delete";
 import App from "./components/App";
 
 const router = createBrowserRouter([
@@ -38,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/users/logOut",
     element: <LogOut />,
+  },
+  {
+    path: "/users/editUser",
+    element: <EditUser />,
+  },
+  {
+    path: "/users/delete",
+    element: <Delete />,
   },
 ]);
 

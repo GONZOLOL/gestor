@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as Exit } from "../media/exit.svg";
 import { Link } from "react-router-dom";
-import { getLocalStorageToken } from "./LocalStorage";
-import { updateLocalStorageId } from "./LocalStorage";
+import { getLocalStorageToken } from "../utils/LocalStorage";
+import { updateLocalStorageId } from "../utils/LocalStorage";
 import { ReactComponent as Trash } from "../media/trash.svg";
 import { ReactComponent as EditUser } from "../media/editUser.svg";
 
@@ -10,8 +10,6 @@ export function Users() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    saveId();
-
     const token = getLocalStorageToken("token");
 
     fetch("http://51.38.51.187:5050/api/v1/users", {
@@ -62,7 +60,7 @@ export function Users() {
                           {<EditUser />}
                         </Link>
                         <Link
-                          to=""
+                          to="/users/delete"
                           className="delete"
                           onClick={() => saveId(data.id)}
                         >

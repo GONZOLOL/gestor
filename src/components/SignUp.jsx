@@ -3,6 +3,8 @@ import { useState } from "react";
 import { ReactComponent as Mail } from "../media/mail.svg";
 import { ReactComponent as Lock } from "../media/lock.svg";
 import { ReactComponent as Asterisk } from "../media/asterisk.svg";
+import { ReactComponent as OpenEye } from "../media/openEye.svg";
+import { ReactComponent as ClosedEye } from "../media/closedEye.svg";
 import { Link } from "react-router-dom";
 
 export function SignUp() {
@@ -11,6 +13,7 @@ export function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [view, setView] = useState("hide");
 
   const reset = () => {
     setError(null);
@@ -28,20 +31,29 @@ export function SignUp() {
       headers: { name, surname, email, password },
     })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+        if (response.status == 409) {
+          setError("Email already exist");
         }
         return response;
       })
       .then((response) => console.log(response))
       .catch((error) => {
-        if (error.message === "Network response was not ok") {
-          setError("Email already exist");
-        } else {
+        if (error.message != "409") {
           console.error("Error:", error);
         }
       });
   }
+
+  const hidePassword = () => {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+      setView("notHide");
+    } else {
+      x.type = "password";
+      setView("hide");
+    }
+  };
 
   return (
     <section className="loginContainer">
@@ -97,6 +109,21 @@ export function SignUp() {
                 />
                 <Lock className="svg lockIcon" />
                 <Asterisk className="svg asteriskIcon" />
+              </div>
+              <div className="showPassword">
+                {view == "hide" ? (
+                  <>
+                    <span className="showText">Show Password</span>
+                    <ClosedEye onClick={hidePassword} />
+                  </>
+                ) : view == "notHide" ? (
+                  <>
+                    <span className="showText">Hide Password</span>
+                    <OpenEye onClick={hidePassword} />
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
               <div className="submit">
                 <span></span>
