@@ -10,7 +10,7 @@ export function Delete() {
   const navigate = useNavigate();
 
   const deleteUser = () => {
-    fetch(`http://51.38.51.187:5050/api/v1/users/${id}`, {
+    fetch(`${import.meta.env.VITE_APP_API_LINK}/users/${id}`, {
       headers: { Authorization: `Bearer ${getLocalStorageToken()}` },
       method: "DELETE",
     })

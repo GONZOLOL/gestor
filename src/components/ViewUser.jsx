@@ -12,7 +12,7 @@ export function ViewUser() {
   useEffect(() => {
     const token = getLocalStorageToken("token");
 
-    fetch(`http://51.38.51.187:5050/api/v1/users/${getLocalStorageId()}`, {
+    fetch(`${import.meta.env.VITE_APP_API_LINK}/users/${getLocalStorageId()}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((data) => data.json())
@@ -20,8 +20,6 @@ export function ViewUser() {
         setData(data);
       });
   }, []);
-
-  console.log(data.email);
 
   return (
     <section className="mainBox">

@@ -28,7 +28,7 @@ export const LogIn = () => {
     if (email && password) {
       setError(null);
 
-      fetch("http://51.38.51.187:5050/api/v1/auth/log-in", {
+      fetch(`${import.meta.env.VITE_APP_API_LINK}/auth/log-in`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

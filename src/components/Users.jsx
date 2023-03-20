@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as Exit } from "../media/exit.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getLocalStorageToken } from "../utils/LocalStorage";
 import { updateLocalStorageId } from "../utils/LocalStorage";
 import { ReactComponent as Trash } from "../media/trash.svg";
@@ -10,10 +10,14 @@ import { ReactComponent as EditUser } from "../media/editUser.svg";
 export function Users() {
   const [data, setData] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const token = getLocalStorageToken("token");
-
-    fetch("http://51.38.51.187:5050/api/v1/users", {
+    if (!token) {
+      navigate("/login");
+    }
+    fetch(`${import.meta.env.VITE_APP_API_LINK}/users`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((data) => data.json())
