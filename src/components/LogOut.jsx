@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 export function LogOut() {
   const clearLocalStorage = () => {
-    localStorage.clear;
+    console.log("hello");
+    localStorage.clear();
   };
   return (
     <section className="userPageContainer">

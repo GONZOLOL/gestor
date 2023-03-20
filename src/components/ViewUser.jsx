@@ -21,8 +21,6 @@ export function ViewUser() {
       });
   }, []);
 
-  console.log(data.email);
-
   return (
     <section className="mainBox">
       <div className="innerBox">
