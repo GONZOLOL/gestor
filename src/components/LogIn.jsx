@@ -6,7 +6,7 @@ import { ReactComponent as Asterisk } from "../media/asterisk.svg";
 import { ReactComponent as OpenEye } from "../media/openEye.svg";
 import { ReactComponent as ClosedEye } from "../media/closedEye.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { updateLocalStorageToken } from "./LocalStorage";
+import { updateLocalStorageToken } from "../utils/LocalStorage";
 
 export const LogIn = () => {
   const [data, setData] = useState(null);

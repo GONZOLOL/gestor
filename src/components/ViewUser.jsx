@@ -1,8 +1,8 @@
 import { ReactComponent as Back } from "../media/back.svg";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getLocalStorageToken } from "./LocalStorage";
-import { getLocalStorageId } from "./LocalStorage";
+import { getLocalStorageToken } from "../utils/LocalStorage";
+import { getLocalStorageId } from "../utils/LocalStorage";
 import { ReactComponent as Trash } from "../media/trash.svg";
 import { ReactComponent as EditUser } from "../media/editUser.svg";
 
@@ -53,23 +53,16 @@ export function ViewUser() {
                   {data.email ? data.email : "No data"}
                 </span>
               </div>
-              <div className="contentContainer">
-                <span className="tag">Password</span>
-                <span className="info">
-                  {data.password ? data.password : "No data"}
-                </span>
-              </div>
             </div>
-
             <div className="iconButtons">
               <div className="editButton">
-                <Link to="" className="edit">
+                <Link to="/users/editUser" className="editLink">
                   <span>Edit User</span>
                 </Link>
                 <EditUser />
               </div>
               <div className="deleteButton">
-                <Link to="" className="delete">
+                <Link to="/users/delete" className="deleteLink">
                   <span>Delete</span>
                 </Link>
                 <Trash />
