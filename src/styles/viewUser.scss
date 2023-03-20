@@ -48,6 +48,15 @@
             display: flex;
             position: relative;
             align-items: center;
+            input {
+              border: none;
+              border-radius: 5px;
+              background-color: #24343d;
+              color: #ffffff;
+              &::placeholder {
+                color: #ffffff;
+              }
+            }
             .info {
               display: flex;
               align-items: center;
@@ -104,7 +113,6 @@
               transition: 500ms;
             }
           }
-          // #42555b
           .deleteButton {
             display: flex;
             align-items: center;
@@ -132,7 +140,79 @@
               background-color: red;
             }
           }
+          .saveButton {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            transition: 500ms;
+            position: relative;
+            button {
+              padding: 10px 50px 10px 20px;
+              background-color: #db7600;
+              border: none;
+              border-radius: 5px;
+              color: #ffffff;
+              font-family: "Tilt Neon", cursive;
+              font-weight: 600;
+              font-size: 16px;
+              cursor: pointer;
+            }
+            svg {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 60px;
+              fill: #ffffff;
+              z-index: 1;
+            }
+            &:hover {
+              opacity: 20%;
+              color: #ffffff;
+              transition: 500ms;
+            }
+          }
+          .cancelButton {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            background-color: #42555b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            transition: 500ms;
+            position: relative;
+            .deleteLink {
+              padding: 10px 50px 10px 20px;
+              z-index: 2;
+            }
+            svg {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 70px;
+              top: 6px;
+              fill: #ffffff;
+            }
+            &:hover {
+              color: #ffffff;
+              transition: 500ms;
+              opacity: 20%;
+            }
+          }
         }
+      }
+      .errorMessage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 1px;
+        margin-top: 20px;
+        color: #ffffff;
+        background-color: green;
+        border-radius: 5px;
       }
     }
   }
